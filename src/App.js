@@ -6,6 +6,10 @@ import AdminLayout from './layouts/AdminLayout';
 
 // Public Pages
 import HomePage from './pages/public/TrangChu';
+import ProductDetail from './pages/public/ChiTietSanPham';
+import CategoryPage from './pages/public/DanhMucSanPham';
+import ThuongHieuPage from './pages/public/ThuongHieuPage';
+
 
 // Auth Pages
 import DangNhapPage from './pages/auth/DangNhapPage';
@@ -13,6 +17,8 @@ import DangKyPage from './pages/auth/DangKyPage';
 
 // Admin Pages
 import DashboardPage from './pages/admin/DashboardPage';
+import AdminProductsPage from './pages/admin/AdminProductsPage';
+
 import AdminEmployeesPage from './pages/admin/AdminEmployeesPage';
 import AdminCustomersPage from './pages/admin/AdminCustomersPage';
 import AdminReportPage from './pages/admin/AdminReportPage';
@@ -26,6 +32,9 @@ function App() {
         {/* Public Routes with Layout */}
         <Route element={<PublicLayout />}>
           <Route path="/" element={<HomePage />} />
+          <Route path="/products" element={<CategoryPage />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/brand/:id" element={<ThuongHieuPage />} />          
         </Route>
 
         {/* Auth Routes without Layout */}
@@ -35,6 +44,8 @@ function App() {
         {/* Admin Routes */}
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<DashboardPage />} />
+          <Route path="products" element={<AdminProductsPage />} />
+
           <Route path="employees" element={<AdminEmployeesPage />} />
           <Route path="customers" element={<AdminCustomersPage />} />
           <Route path="reports" element={<AdminReportPage />} />
