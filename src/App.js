@@ -8,6 +8,7 @@ import AdminLayout from './layouts/AdminLayout';
 import HomePage from './pages/public/TrangChu';
 import ProductDetail from './pages/public/ChiTietSanPham';
 import CategoryPage from './pages/public/DanhMucSanPham';
+import GioHangPage from './pages/public/GioHang';
 import ThuongHieuPage from './pages/public/ThuongHieuPage';
 
 
@@ -34,6 +35,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/products" element={<CategoryPage />} />
           <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/cart" element={<GioHangPage />} />
           <Route path="/brand/:id" element={<ThuongHieuPage />} />          
         </Route>
 

@@ -1,4 +1,5 @@
 import productApi from './productApi.js';
+import cartApi from './cartApi.js';
 import authApi from './authApi.js';
 import customerApi from './customerApi.js';
 import employeeApi from './employeeApi.js';
@@ -19,6 +20,16 @@ const api = {
   // Auth methods
   login: authApi.login.bind(authApi),
   registerCustomer: authApi.registerCustomer.bind(authApi),
+
+  // Cart methods
+  getCart: cartApi.getCart.bind(cartApi),
+  addCartItem: cartApi.addCartItem.bind(cartApi),
+  addPreOrderToCart: cartApi.addPreOrderToCart.bind(cartApi),
+  removeCartItem: cartApi.removeCartItem.bind(cartApi),
+  clearCart: cartApi.clearCart.bind(cartApi),
+  updateCartItem: cartApi.updateCartItem.bind(cartApi),
+  checkStockBeforeCheckout: cartApi.checkStockBeforeCheckout.bind(cartApi),
+  checkoutCart: cartApi.checkoutCart.bind(cartApi),
 
   // Customer methods
   getCustomers: customerApi.getCustomers.bind(customerApi),
@@ -45,6 +56,7 @@ export default api;
 // Also export individual APIs for more granular imports
 export {
   productApi,
+  cartApi,
   authApi,
   customerApi,
   employeeApi,
