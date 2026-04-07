@@ -43,10 +43,10 @@ const AdminSidebar = () => {
                 </NavLink>
               </>
             )}
-            <NavLink to="/admin/reports" className={navLinkClasses}>
+            {/* <NavLink to="/admin/reports" className={navLinkClasses}>
               <span className="material-symbols-outlined">monitoring</span>
               Báo cáo
-            </NavLink>
+            </NavLink> */}
           </nav>
         </div>
       </div>

@@ -63,7 +63,7 @@ const AdminCustomersPage = () => {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex justify-between items-center">
+      {/* <div className="flex justify-between items-center">
         <h1 className="text-2xl font-bold">Quản lý khách hàng</h1>
         <button
           onClick={openCreateModal}
@@ -71,7 +71,7 @@ const AdminCustomersPage = () => {
         >
           + Thêm khách hàng
         </button>
-      </div>
+      </div> */}
 
       {/* Customers Table */}
       <CustomersTable
