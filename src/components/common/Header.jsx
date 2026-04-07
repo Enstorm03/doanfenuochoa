@@ -53,7 +53,9 @@ const Header = () => {
           </div>
         </label>
         
-
+        <Link to="/cart" className="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-background-light dark:bg-background-dark gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5 hover:bg-primary/10 transition-colors">
+          <span className="material-symbols-outlined">shopping_bag</span>
+        </Link>
         <div className="relative">
           <button
             onClick={() => setShowUserMenu(!showUserMenu)}
@@ -68,6 +70,13 @@ const Header = () => {
                   <div className="px-4 py-2 text-sm text-text-secondary-light dark:text-text-secondary-dark border-b border-border-light dark:border-border-dark">
                     Xin chào, {user?.ho_ten || 'User'}
                   </div>
+                  <Link
+                    to="/lich-su-don-hang"
+                    className="block px-4 py-2 text-sm hover:bg-background-light dark:hover:bg-background-dark transition-colors"
+                    onClick={() => setShowUserMenu(false)}
+                  >
+                    Lịch sử đơn hàng
+                  </Link>
                   <button
                     onClick={() => {
                       logout();
