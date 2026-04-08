@@ -4,6 +4,7 @@ import authApi from './authApi.js';
 import customerApi from './customerApi.js';
 import employeeApi from './employeeApi.js';
 import reviewApi from './reviewApi.js';
+import orderApi from './orderApi.js';
 
 // Combined API object for backward compatibility
 const api = {
@@ -49,6 +50,24 @@ const api = {
 
   // Review methods
   createReview: reviewApi.createReview.bind(reviewApi),
+
+  // Order methods
+  placeOrder: orderApi.placeOrder.bind(orderApi),
+  cancelOrder: orderApi.cancelOrder.bind(orderApi),
+  getUserOrders: orderApi.getUserOrders.bind(orderApi),
+  getUserOrdersHistoryDto: orderApi.getUserOrdersHistoryDto.bind(orderApi),
+  getOrderDetails: orderApi.getOrderDetails.bind(orderApi),
+  confirmOrder: orderApi.confirmOrder.bind(orderApi),
+  shipOrder: orderApi.shipOrder.bind(orderApi),
+  updateTracking: orderApi.updateTracking.bind(orderApi),
+  updateOrderRecipient: orderApi.updateOrderRecipient.bind(orderApi),
+  markPaymentCollected: orderApi.markPaymentCollected.bind(orderApi),
+  updatePaymentStatus: orderApi.updatePaymentStatus.bind(orderApi),
+  moveToPending: orderApi.moveToPending.bind(orderApi),
+  completeOrder: orderApi.completeOrder.bind(orderApi),
+  searchOrdersByTracking: orderApi.searchOrdersByTracking.bind(orderApi),
+  getOrders: orderApi.getOrders.bind(orderApi),
+  checkOrderReturnStatus: orderApi.checkOrderReturnStatus.bind(orderApi),
 };
 
 export default api;
@@ -61,4 +80,5 @@ export {
   customerApi,
   employeeApi,
   reviewApi,
+  orderApi,
 };
