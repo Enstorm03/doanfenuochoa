@@ -10,7 +10,6 @@ import ShippingForm from './components/shipping/ShippingForm';
 import PaymentMethodSelector from './components/payment/PaymentMethodSelector';
 import OrderItems from './components/order/OrderItems';
 import OrderSummary from './components/order/OrderSummary';
-
 const ThanhToanPage = () => {
   const {
     cart,
