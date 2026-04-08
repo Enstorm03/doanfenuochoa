@@ -10,7 +10,7 @@ import ProductDetail from './pages/public/ChiTietSanPham';
 import CategoryPage from './pages/public/DanhMucSanPham';
 import GioHangPage from './pages/public/GioHang';
 import ThuongHieuPage from './pages/public/ThuongHieuPage';
-
+import ThanhToanPage from './pages/public/checkout/ThanhToanPage';
 
 // Auth Pages
 import DangNhapPage from './pages/auth/DangNhapPage';
@@ -36,7 +36,8 @@ function App() {
           <Route path="/products" element={<CategoryPage />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<GioHangPage />} />
-          <Route path="/brand/:id" element={<ThuongHieuPage />} />          
+          <Route path="/brand/:id" element={<ThuongHieuPage />} /> 
+          <Route path="/thanh-toan" element={<ThanhToanPage />} />         
         </Route>
 
         {/* Auth Routes without Layout */}
