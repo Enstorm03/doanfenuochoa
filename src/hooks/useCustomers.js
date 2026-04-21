@@ -5,11 +5,8 @@ const useCustomers = () => {
   const [customers, setCustomers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const [showCreateModal, setShowCreateModal] = useState(false);
   const [editingCustomer, setEditingCustomer] = useState(null);
   const [formData, setFormData] = useState({
-    tenDangNhap: '',
-    matKhau: '',
     hoTen: '',
     soDienThoai: '',
     diaChi: ''
@@ -35,19 +32,6 @@ const useCustomers = () => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleCreateCustomer = async (e) => {
-    e.preventDefault();
-    try {
-      await api.createCustomer(formData);
-      alert('Tạo khách hàng thành công!');
-      setShowCreateModal(false);
-      setFormData({ tenDangNhap: '', matKhau: '', hoTen: '', soDienThoai: '', diaChi: '' });
-      fetchCustomers();
-    } catch (error) {
-      alert('Tạo khách hàng thất bại: ' + (error.message || 'Vui lòng thử lại'));
-    }
   };
 
   const handleUpdateCustomer = async (customerId) => {
@@ -100,16 +84,6 @@ const useCustomers = () => {
     }
   };
 
-  const openCreateModal = () => {
-    setFormData({ tenDangNhap: '', matKhau: '', hoTen: '', soDienThoai: '', diaChi: '' });
-    setShowCreateModal(true);
-  };
-
-  const closeCreateModal = () => {
-    setShowCreateModal(false);
-    setFormData({ tenDangNhap: '', matKhau: '', hoTen: '', soDienThoai: '', diaChi: '' });
-  };
-
   const startEditing = (customer) => {
     setEditingCustomer(customer.idNguoiDung);
     setFormData({
@@ -128,17 +102,13 @@ const useCustomers = () => {
     customers,
     loading,
     error,
-    showCreateModal,
     editingCustomer,
     formData,
     fetchCustomers,
     handleInputChange,
-    handleCreateCustomer,
     handleUpdateCustomer,
     handleResetPassword,
     handleDeleteCustomer,
-    openCreateModal,
-    closeCreateModal,
     startEditing,
     cancelEditing
   };

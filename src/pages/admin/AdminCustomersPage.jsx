@@ -2,25 +2,19 @@ import React from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import useCustomers from '../../hooks/useCustomers';
 import CustomersTable from './customers/CustomersTable';
-import CreateCustomerModal from './customers/CreateCustomerModal';
-
 const AdminCustomersPage = () => {
   const { isAdmin } = useAuth();
   const {
     customers,
     loading,
     error,
-    showCreateModal,
     editingCustomer,
     formData,
     fetchCustomers,
     handleInputChange,
-    handleCreateCustomer,
     handleUpdateCustomer,
     handleResetPassword,
     handleDeleteCustomer,
-    openCreateModal,
-    closeCreateModal,
     startEditing,
     cancelEditing
   } = useCustomers();
@@ -86,14 +80,6 @@ const AdminCustomersPage = () => {
         onDeleteCustomer={handleDeleteCustomer}
       />
 
-      {/* Create Customer Modal */}
-      <CreateCustomerModal
-        showCreateModal={showCreateModal}
-        formData={formData}
-        onInputChange={handleInputChange}
-        onCreateCustomer={handleCreateCustomer}
-        onCloseModal={closeCreateModal}
-      />
     </div>
   );
 };
