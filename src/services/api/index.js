@@ -5,6 +5,7 @@ import customerApi from './customerApi.js';
 import employeeApi from './employeeApi.js';
 import reviewApi from './reviewApi.js';
 import orderApi from './orderApi.js';
+import brandApi from './brandApi.js';
 
 // Combined API object for backward compatibility
 const api = {
@@ -68,6 +69,11 @@ const api = {
   searchOrdersByTracking: orderApi.searchOrdersByTracking.bind(orderApi),
   getOrders: orderApi.getOrders.bind(orderApi),
   checkOrderReturnStatus: orderApi.checkOrderReturnStatus.bind(orderApi),
+
+  // Brand methods
+  createBrand: brandApi.createBrand.bind(brandApi),
+  updateBrand: brandApi.updateBrand.bind(brandApi),
+  deleteBrand: brandApi.deleteBrand.bind(brandApi),
 };
 
 export default api;
@@ -81,4 +87,5 @@ export {
   employeeApi,
   reviewApi,
   orderApi,
+  brandApi,
 };
