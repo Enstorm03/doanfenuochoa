@@ -25,6 +25,8 @@ import AdminEmployeesPage from './pages/admin/AdminEmployeesPage';
 import AdminCustomersPage from './pages/admin/AdminCustomersPage';
 import AdminReportPage from './pages/admin/AdminReportPage';
 
+import AdminBrandsPage from './pages/admin/AdminBrandsPage';
+
 import './assets/styles/App.css';
 
 function App() {
@@ -37,7 +39,7 @@ function App() {
           <Route path="/products" element={<CategoryPage />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<GioHangPage />} />
-          <Route path="/brand/:id" element={<ThuongHieuPage />} /> 
+          <Route path="/brands" element={<ThuongHieuPage />} /> 
           <Route path="/thanh-toan" element={<ThanhToanPage />} />
           <Route path="/lich-su-don-hang" element={<LichSuDonHangPage />} />
         </Route>
@@ -54,6 +56,8 @@ function App() {
           <Route path="employees" element={<AdminEmployeesPage />} />
           <Route path="customers" element={<AdminCustomersPage />} />
           <Route path="reports" element={<AdminReportPage />} />
+          
+          <Route path="brands" element={<AdminBrandsPage />} />
         </Route>
       </Routes>
     </div>

@@ -31,6 +31,10 @@ const AdminSidebar = () => {
               <span className="material-symbols-outlined">inventory_2</span>
               Sản phẩm
             </NavLink>
+            <NavLink to="/admin/brands" className={navLinkClasses}>
+              <span className="material-symbols-outlined">workspace_premium</span>
+              Thương hiệu
+            </NavLink>
             {isAdmin() && (
               <>
                 <NavLink to="/admin/employees" className={navLinkClasses}>
